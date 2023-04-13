@@ -1,17 +1,17 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ page contentType="text/html; charset=UTF-8"%>
-<%@include file="dynamic/css.jsp"%>
-<%@include file="dynamic/navigationMain.jsp"%>
+<%@include file="../dynamic/css.jsp"%>
+<%@include file="../dynamic/navigationMain.jsp"%>
 <div id="layoutSidenav">
-    <%@include file="dynamic/sideMenu.jsp"%>
+    <%@include file="../dynamic/sideMenu.jsp"%>
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
-                                Wszystkie zlecenia
+                                Wszyscy pracownicy
                             </div>
                             <div class="card-body">
 <%--                                <table id="datatablesSimple">--%>
@@ -19,20 +19,22 @@
                                     <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Imię i nazwisko klienta</th>
-                                        <th>Numer rejestracyjny pojazdu</th>
-                                        <th>Data rejestracji zlecenia</th>
+                                        <th>Imię i nazwisko pracownika</th>
+                                        <th>Adres mailowy</th>
                                         <th></th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <c:forEach items="${orderModel}" var="order">
+                                    <c:forEach items="${employeeModel}" var="employee">
                                         <tr>
-                                            <td>${order.id}</td>
-                                            <td>${order.clientModel.firstName} ${order.clientModel.lastName}</td>
-                                            <td>${order.vehicleModel.registrationNumber}</td>
-                                            <td>${order.orderRegistrationDate}</td>
-                                            <td></td>
+                                            <td>${employee.id}</td>
+                                            <td>${employee.firstName} ${employee.lastName}</td>
+                                            <td>${employee.email}</td>
+                                            <td><div class="wrapper"><form method="get" action='<c:url value="/employees/remove/${employee.id}"/>'>
+                                                <button type="submit" class="btn btn-danger">Usuń</button>
+                                            </form> <form method="get" action='<c:url value="/editEmployee/${employee.id}"/>'>
+                                                <button type="submit" class="btn btn-primary">Edytuj</button>
+                                            </form></div></td>
                                         </tr>
                                     </c:forEach>
                                     </tbody>
@@ -41,9 +43,9 @@
                         </div>
                     </div>
                 </main>
-                <%@include file="dynamic/footer.jsp"%>
+                <%@include file="../dynamic/footer.jsp"%>
             </div>
         </div>
-<%@include file="dynamic/javaScript.jsp"%>
+<%@include file="../dynamic/javaScript.jsp"%>
     </body>
 </html>

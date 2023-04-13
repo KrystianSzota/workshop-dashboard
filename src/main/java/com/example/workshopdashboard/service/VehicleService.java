@@ -1,8 +1,6 @@
 package com.example.workshopdashboard.service;
 
-import com.example.workshopdashboard.model.OrderModel;
 import com.example.workshopdashboard.model.VehicleModel;
-import com.example.workshopdashboard.repository.OrderRepository;
 import com.example.workshopdashboard.repository.VehicleRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -40,4 +38,7 @@ public class VehicleService {
         repo.save(editVehicle);
     }
 
+    public void updateVehicle(Long id, String brand, String model, Integer yearOfProduction, String capacity, String registrationNumber){
+        repo.updateVehicleById(id, brand, model, yearOfProduction, capacity, registrationNumber);
+    }
 }

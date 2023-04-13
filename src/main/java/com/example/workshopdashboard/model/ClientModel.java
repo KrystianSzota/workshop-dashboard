@@ -6,12 +6,15 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name = "client")
 public class ClientModel {
 
     @Id
@@ -44,5 +47,9 @@ public class ClientModel {
 
     @Column(name = "email")
     private String email;
+
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "clientModel")
+    private Set<OrderModel> orders = new HashSet<>();
+
 
 }

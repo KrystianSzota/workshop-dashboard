@@ -41,4 +41,8 @@ public class EmployeeService {
     public void deleteEmployee(Long id){
         repo.deleteById(id);
     }
+
+    public void updateEmployee(Long id, String firstName, String lastName, String email){
+        repo.updateEmployeeById(id, firstName, lastName, email);
+    }
 }

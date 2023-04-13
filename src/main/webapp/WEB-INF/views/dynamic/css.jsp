@@ -1,4 +1,3 @@
-<%@ taglib prefix="c" uri="http://www.springframework.org/tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: krych
@@ -16,6 +15,6 @@
     <meta name="author" content="" />
     <title>Panel pracownika</title>
     <link href='<c:url value="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css"/>' rel="stylesheet" />
-    <link href='<c:url value="css/styles.css"/>' rel="stylesheet" />
+    <link href='<c:url value="/resources/css/styles.css"/>' rel="stylesheet" />
     <script src='<c:url value="https://use.fontawesome.com/releases/v6.1.0/js/all.js"/>' crossorigin="anonymous"></script>
 </head>

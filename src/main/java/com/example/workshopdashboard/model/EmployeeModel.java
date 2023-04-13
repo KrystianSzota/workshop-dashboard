@@ -12,6 +12,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name = "employee")
 public class EmployeeModel {
 
     @Id
@@ -29,4 +30,7 @@ public class EmployeeModel {
 
     @Column(name = "password")
     private String password;
+
+    @Column(name = "role")
+    private String role;
 }
