@@ -18,7 +18,7 @@
         <div class="card mb-4">
           <div class="card-header">
             <i class="fas fa-table me-1"></i>
-            Dodaj nowy pojazd
+            Edytuj pojazd
           </div>
           <div class="card-body">
             <form method="post" action='<c:url value="/editVehicle/${vehicleModel.id}"/>'>

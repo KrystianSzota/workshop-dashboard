@@ -18,7 +18,7 @@
         <div class="card mb-4">
           <div class="card-header">
             <i class="fas fa-table me-1"></i>
-            Dodaj nowego pracownika
+            Edytuj pracownika
           </div>
           <div class="card-body">
             <form method="post" action='<c:url value="/editEmployee/${employeeModel.id}"/>'>
@@ -41,7 +41,7 @@
                 <label for="inputEmail">Adres email</label>
               </div>
               <div class="mt-4 mb-0">
-                <div class="d-grid"><input type="submit" class="btn btn-success">Edytuj konto pracownika</div>
+                <div class="d-grid"><input type="submit" class="btn btn-success"></div>
               </div>
             </form>
           </div>

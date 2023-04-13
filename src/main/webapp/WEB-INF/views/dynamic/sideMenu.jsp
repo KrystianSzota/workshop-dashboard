@@ -51,7 +51,6 @@
                             <nav class="sb-sidenav-menu-nested nav">
                                 <a class="nav-link" href='<c:url value="/addVehicle"/>'>Dodaj pojazd</a>
                                 <a class="nav-link" href='<c:url value="/vehicles"/>'>Wszystkie pojzady</a>
-                                <a class="nav-link" href="500.html">500 Page</a>
                             </nav>
                         </div>
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseClients" aria-expanded="false" aria-controls="pagesCollapseClients">
@@ -60,9 +59,8 @@
                         </a>
                         <div class="collapse" id="pagesCollapseClients" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="401.html">401 Page</a>
-                                <a class="nav-link" href="404.html">404 Page</a>
-                                <a class="nav-link" href="500.html">500 Page</a>
+                                <a class="nav-link" href='<c:url value="/addClient"/>'>Dodaj klienta</a>
+                                <a class="nav-link" href='<c:url value="/clients"/>'>Wszyscy klienci</a>
                             </nav>
                         </div>
                     </nav>

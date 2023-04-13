@@ -52,7 +52,7 @@ public class EmployeeController {
     @PostMapping("/addEmployee/{id}")
     public RedirectView postEditEmployee(EmployeeModel editEmployee){
         employeeService.saveEditEmployee(editEmployee);
-        return new RedirectView("/editStudent/{id}");
+        return new RedirectView("/editEmployee/{id}");
     }
 
     @PostMapping("/editEmployee/{id}")
