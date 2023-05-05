@@ -28,7 +28,43 @@
             Nowe zlecenie
           </div>
           <div class="card-body">
-
+            <form method="post" action='<c:url value="/addOrder"/>'>
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <label for="inputClientID">Klient</label>
+                  <select class="form-select" id="inputClientID" name="clientModel" required="required">
+                    <option value="" disabled selected hidden>Wybierz klienta z listy</option>
+                <c:forEach items="${clientModel}" var="client">
+                    <option value="${client.id}">${client.firstName} ${client.lastName}, ${client.city}, ${client.email}</option>
+                </c:forEach>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label for="inputVehicleId">Pojazd</label>
+                    <select class="form-select" id="inputVehicleId" name="vehicleModel" required="required">
+                        <option value="" disabled selected hidden>Wybierz pojazd z listy</option>
+                        <c:forEach items="${vehicleModel}" var="vehicle">
+                        <option value="${vehicle.id}">${vehicle.brand} ${vehicle.model}, ${vehicle.registrationNumber}</option>
+                        </c:forEach>
+                    </select>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-2">
+                  <label for="inputVehicleOdometerReading">Stan licznika</label>
+                  <input class="form-control" id="inputVehicleOdometerReading" type="text" name="vehicleOdometerReading" required="required" placeholder="Wprowadź stan licznika" />
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <label for="inputExtentOfRepairs">Zakres naprawy</label>
+                  <textarea class="form-control" id="inputExtentOfRepairs" type="text" name="extentOfRepairs" required="required" placeholder="Wprowadź zakres naprawy" /></textarea>
+                </div>
+              </div>
+              <div class="mt-4 mb-0">
+                <div class="d-grid"><input type="submit" class="btn btn-success"></div>
+              </div>
+            </form>
           </div>
         </div>
       </div>

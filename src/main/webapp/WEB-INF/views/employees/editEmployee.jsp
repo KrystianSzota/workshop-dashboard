@@ -22,6 +22,10 @@
           </div>
           <div class="card-body">
             <form method="post" action='<c:url value="/editEmployee/${employeeModel.id}"/>'>
+              <a href='<c:url value="/employees"/>'>
+                <i class="fas fa-arrow-left me-1"></i>
+                Powrót
+              </a>
               <div class="row mb-3">
                 <div class="col-md-6">
                   <div class="form-floating mb-3 mb-md-0">
@@ -37,7 +41,7 @@
                 </div>
               </div>
               <div class="form-floating mb-3">
-                <input class="form-control" id="inputEmail" type="email" name="email" required="required" value="${employeeModel.email}" />
+                <input class="form-control" id="inputEmail" type="email" name="email" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="${employeeModel.email}" />
                 <label for="inputEmail">Adres email</label>
               </div>
               <div class="mt-4 mb-0">

@@ -9,17 +9,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@include file="../dynamic/css.jsp"%>
-<script type="text/javascript">
-  function matchPassword() {
-    var input = document.getElementById('inputPasswordConfirm');
-    if (input.value != document.getElementById('inputPassword').value) {
-      input.setCustomValidity('Hasła nie są identyczne!');
-    } else {
-      input.setCustomValidity('');
-      alert("Konto zostało utworzone");
-    }
-  }
-</script>
 <%@include file="../dynamic/navigationMain.jsp"%>
 <div id="layoutSidenav">
   <%@include file="../dynamic/sideMenu.jsp"%>
@@ -48,7 +37,7 @@
                 </div>
               </div>
               <div class="form-floating mb-3">
-                <input class="form-control" id="inputEmail" type="email" name="email" required="required" placeholder="name@example.com" />
+                <input class="form-control" id="inputEmail" type="email" name="email" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="name@example.com" />
                 <label for="inputEmail">Adres email</label>
               </div>
               <div class="row mb-3">
@@ -67,11 +56,11 @@
               </div>
               <ul class="list-group">
                 <li class="list-group-item">
-                  <input class="form-check-input me-1" type="radio" name="role" value="admin" id="firstRadio">
+                  <input class="form-check-input me-1" type="radio" name="role" value="ROLE_ADMIN" id="firstRadio">
                   Administrator
                 </li>
                 <li class="list-group-item">
-                  <input class="form-check-input me-1" type="radio" name="role" value="employee" id="secondRadio" checked>
+                  <input class="form-check-input me-1" type="radio" name="role" value="ROLE_USER" id="secondRadio" checked>
                   Pracownik
                 </li>
               </ul>

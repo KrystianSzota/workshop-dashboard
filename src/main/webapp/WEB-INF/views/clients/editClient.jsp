@@ -22,6 +22,10 @@
           </div>
             <div class="card-body">
                 <form method="post" action='<c:url value="/editClient/${clientModel.id}"/>'>
+                    <a href='<c:url value="/clients"/>'>
+                        <i class="fas fa-arrow-left me-1"></i>
+                        Powrót
+                    </a>
                     <div class="row mb-3">
                         <div class="col-md-6">
                             <label for="inputFirstName">Imię</label>
@@ -35,7 +39,7 @@
                     <div class="row mb-3">
                         <div class="col-md-2">
                             <label for="inputZipCode">Kod pocztowy</label>
-                            <input class="form-control" id="inputZipCode" type="text" name="zipCode" required="required" value="${clientModel.zipCode}" />
+                            <input class="form-control" id="inputZipCode" type="text" name="zipCode" required="required" pattern="[0-9]{2}-[0-9]{3}" value="${clientModel.zipCode}" />
                         </div>
                         <div class="col-md-3">
                             <label for="inputCity">Miasto</label>
@@ -61,7 +65,7 @@
                         </div>
                         <div class="col-md-6">
                             <label for="inputEmail">Adres e-mail</label>
-                            <input class="form-control" id="inputEmail" type="text" name="email" value="${clientModel.email}" />
+                            <input class="form-control" id="inputEmail" type="text" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="${clientModel.email}" />
                         </div>
                     </div>
                     <div class="mt-4 mb-0">

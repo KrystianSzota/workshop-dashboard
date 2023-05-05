@@ -1,12 +1,12 @@
 package com.example.workshopdashboard.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.example.workshopdashboard.enums.Status;
+import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Getter
@@ -28,12 +28,17 @@ public class OrderModel {
     private String extentOfRepairs;
 
     @DateTimeFormat(pattern = "yy-MM-dd")
+    @CreationTimestamp
     @Column(name = "order_registration_date")
     private Date orderRegistrationDate;
 
     @DateTimeFormat(pattern = "yy-MM-dd")
     @Column(name = "order_close_date")
-    private Date orderCloseDate;
+    private LocalDateTime orderCloseDate;
+
+    @Column(name = "status", nullable = false)
+    @Enumerated(EnumType.STRING)
+    private Status status = Status.W_REALIZACJI;
 
     @ManyToOne
     @JoinColumn(name = "client_id")

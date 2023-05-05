@@ -1,7 +1,6 @@
 package com.example.workshopdashboard.controller;
 
 import com.example.workshopdashboard.model.ClientModel;
-import com.example.workshopdashboard.model.VehicleModel;
 import com.example.workshopdashboard.service.ClientService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;

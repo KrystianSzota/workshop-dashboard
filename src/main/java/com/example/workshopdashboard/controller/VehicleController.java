@@ -1,6 +1,5 @@
 package com.example.workshopdashboard.controller;
 
-import com.example.workshopdashboard.model.EmployeeModel;
 import com.example.workshopdashboard.model.VehicleModel;
 import com.example.workshopdashboard.service.VehicleService;
 import lombok.RequiredArgsConstructor;
@@ -48,5 +47,12 @@ public class VehicleController {
     public RedirectView postEditVehicle(VehicleModel editVehicle){
         vehicleService.saveEditVehicle(editVehicle);
         return new RedirectView("/editVehicle/{id}");
+    }
+
+    @PostMapping("/editVehicle/{id}")
+    public RedirectView postDeleteClient(@PathVariable("id") Long id, String brand, String model, Integer yearOfProduction,
+                                         String capacity, String registrationNumber){
+        vehicleService.updateVehicle(id, brand, model, yearOfProduction, capacity, registrationNumber);
+        return new RedirectView(("/vehicles"));
     }
 }

@@ -11743,4 +11743,8 @@ table.greyGridTable tfoot td {
   justify-content: space-evenly;
 }
 
+.hidden{
+  display: none;
+}
+
 /*table css end*/

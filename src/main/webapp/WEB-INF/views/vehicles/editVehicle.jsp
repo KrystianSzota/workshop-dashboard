@@ -22,27 +22,27 @@
           </div>
           <div class="card-body">
             <form method="post" action='<c:url value="/editVehicle/${vehicleModel.id}"/>'>
+                <a href='<c:url value="/vehicles"/>'>
+                    <i class="fas fa-arrow-left me-1"></i>
+                    Powrót
+                </a>
               <div class="row mb-3">
                 <div class="col-md-6">
-<%--                  <div class="form-floating mb-3 mb-md-0">--%>
                     <label for="inputBrand">Marka</label>
                     <input class="form-control" id="inputBrand" type="text" name="brand" required="required" value="${vehicleModel.brand}" />
-<%--                  </div>--%>
                 </div>
                 <div class="col-md-6">
-<%--                  <div class="form-floating">--%>
                     <label for="inputModel">Model</label>
                     <input class="form-control" id="inputModel" type="text" name="model" required="required" value="${vehicleModel.model}" />
                   </div>
-<%--                </div>--%>
               </div>
               <div class="row mb-3">
                 <div class="col-md-4">
                     <label for="inputYearOfProduction">Rok produkcji</label>
-                    <input class="form-control" id="inputYearOfProduction" type="text" name="yearOfProduction" required="required" value="${vehicleModel.yearOfProduction}" />
+                    <input class="form-control" id="inputYearOfProduction" type="text" name="yearOfProduction" required="required" pattern="[12][0-9]{3}" value="${vehicleModel.yearOfProduction}" />
                 </div>
                 <div class="col-md-4">
-                    <label for="inputCapacity">Pojemność silnika</label>
+                    <label for="inputCapacity">Silnik</label>
                     <input class="form-control" id="inputCapacity" type="text" name="capacity" required="required" value="${vehicleModel.capacity}" />
                 </div>
                 <div class="col-md-4">

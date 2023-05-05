@@ -38,7 +38,8 @@ public class ClientService {
         repo.save(editClient);
     }
 
-    public void updateClient(Long id, String firstName, String lastName, String zipCode, String city, String street, String buildingNumber, String apartment, String phoneNumber, String email){
+    public void updateClient(Long id, String firstName, String lastName, String zipCode, String city, String street,
+                             String buildingNumber, String apartment, String phoneNumber, String email){
         repo.updateEmployeeById(id, firstName, lastName, zipCode, city, street, buildingNumber, apartment, phoneNumber, email);
     }
 

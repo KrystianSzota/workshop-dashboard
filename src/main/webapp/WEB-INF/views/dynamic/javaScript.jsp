@@ -12,3 +12,5 @@
 <script src='<c:url value="/resources/assets/demo/chart-bar-demo.js"/>'></script>
 <script src='<c:url value="https://cdn.jsdelivr.net/npm/simple-datatables@latest"/>' crossorigin="anonymous"></script>
 <script src='<c:url value="/resources/js/datatables-simple-demo.js"/>'></script>
+<script src='<c:url value="/resources/js/clearButton.js"/>'></script>
+<script src='<c:url value="/resources/js/matchPassword.js"/>'></script>
